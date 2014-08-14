@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	dbName 数据库名称
+	dbDir 数据库文件目录
+	debugAble 是否打印数据库调试语句
+	currentVersion 数据库版本
+	
+	<dbversion> 数据库历史版本
+	 <sql>数据库历史版本信息
+
+ -->
+<database>
+    <baseinfo dbName = "cache_data"  debugAble = "true" 
+        currentVersion = "105" isCipher = "false"/>
+</database>

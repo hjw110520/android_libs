@@ -12,9 +12,12 @@
 bin/
 gen/
 
+
 # Gradle files
 .gradle/
 build/
+.metadata/
+.settings/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -34,8 +37,7 @@ proguard/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
-
+Icon
 # Thumbnails
 ._*
 
