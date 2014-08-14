@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class XcStringUtils {
+public class StringUtils {
 	
 	/**
 	 * 在字符串判断是否存在匹配的字符
@@ -108,7 +108,7 @@ public class XcStringUtils {
 	 * @return <code>true</code> if the String is not empty and not null
 	 */
 	public static boolean isNotEmpty(String str) {
-		return !XcStringUtils.isEmpty(str);
+		return !StringUtils.isEmpty(str);
 	}
 
 	/**
@@ -182,7 +182,7 @@ public class XcStringUtils {
 	 * @return
 	 */
 	public static String nullToEmpty(String str) {
-		if (XcStringUtils.isEmpty(str) || "null".equals(str)) {
+		if (StringUtils.isEmpty(str) || "null".equals(str)) {
 			return "";
 		}
 		return str;

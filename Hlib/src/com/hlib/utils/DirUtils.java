@@ -9,7 +9,7 @@ import android.os.Environment;
  * @author haojinwei
  * 文件目录处理
  */
-public  class XCDirUtils {
+public  class DirUtils {
 	/**
 	 * 获取更目录
 	 * @param context

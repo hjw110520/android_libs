@@ -13,7 +13,7 @@ import android.annotation.SuppressLint;
  * 日期格式化处理
  */
 @SuppressLint("SimpleDateFormat")
-public class XcDateTool {
+public class DateTool {
 
 	public static SimpleDateFormat dateSdf1 = new SimpleDateFormat("yyyyMMdd");
 	public static SimpleDateFormat dateSdf2 = new SimpleDateFormat("yyyy-M-d");
@@ -45,7 +45,7 @@ public class XcDateTool {
 	 * @return
 	 */
 	public static String dateToStringFormat(String dateStr, SimpleDateFormat sdf) {
-		if(XcStringUtils.isBlank(dateStr)){
+		if(StringUtils.isBlank(dateStr)){
 			return null;
 		}
 		return sdf.format(StringToDateParse(dateStr, sdf));

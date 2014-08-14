@@ -10,7 +10,7 @@ import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
 import android.view.Display;
 
-public class XcToolkit {
+public class Toolkit {
 	
 	public static int px2dip(float pxValue,Context context) {
 		final float scale = context.getResources().getDisplayMetrics().density;

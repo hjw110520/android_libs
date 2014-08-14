@@ -8,7 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
 
-public class XcObjectTraskit {
+public class ObjectTraskit {
 	/**
 	 * 将需要保存为BLOB类型的字段进行序列化
 	 * 

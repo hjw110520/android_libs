@@ -2,7 +2,7 @@ package com.hlib.utils;
 
 import java.security.MessageDigest;
 
-public class XcMD5kit {
+public class MD5kit {
 	// 生成MD5摘要
 	public static String MD5encrypt(String message) throws Exception {
 		return encrypt(message.getBytes(), "MD5");

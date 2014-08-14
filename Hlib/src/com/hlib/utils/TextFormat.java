@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  * @author haojinwei
  * 
  */
-public class XcTextFormat {
+public class TextFormat {
 
 	public enum FormatType {
 		TelePhone, MobilePhone, EMail, Postcode, WebQQ, Decimal, IntegerBy5, CustName

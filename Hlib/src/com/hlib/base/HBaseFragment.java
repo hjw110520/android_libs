@@ -3,9 +3,9 @@ package com.hlib.base;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import com.hlib.utils.XcStringUtils;
+import com.hlib.utils.StringUtils;
 
-public abstract class XcBaseFragment extends Fragment implements OnReceiveMessageListener{
+public abstract class HBaseFragment extends Fragment implements OnReceiveMessageListener{
 	
 	/*public static XcBaseFragment getInstance(String msgKey){
 		XcBaseFragment xbf = new XcBaseFragment();
@@ -23,8 +23,8 @@ public abstract class XcBaseFragment extends Fragment implements OnReceiveMessag
 		Bundle args = getArguments();
 		if(null != args){
 			msgKey = args.getString("msgKey");
-			if(XcStringUtils.isNotBlank(msgKey)){
-				XcMessageHandler.getInstance().addMsgHandler(msgKey, this);
+			if(StringUtils.isNotBlank(msgKey)){
+				HMessageHandler.getInstance().addMsgHandler(msgKey, this);
 			}
 		}
 	}

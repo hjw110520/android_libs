@@ -5,7 +5,7 @@ import java.util.Date;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.hlib.datacache.model.table.DataCache;
-import com.hlib.utils.XcObjectTraskit;
+import com.hlib.utils.ObjectTraskit;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.db.sqlite.Selector;
 import com.lidroid.xutils.exception.DbException;
@@ -61,7 +61,7 @@ public class ResDataCacheDBHelper {
 		DataCache dc = new DataCache();
 		dc.setReqParamMD5Key(reqParamMD5Key);
 		dc.setInsertTime(new Date().getTime());
-		dc.setCachedata(XcObjectTraskit.trans2Bytes(resData));
+		dc.setCachedata(ObjectTraskit.trans2Bytes(resData));
 		try {
 			dbUtils.saveOrUpdate(dc);
 			return true;
@@ -84,7 +84,7 @@ public class ResDataCacheDBHelper {
 		Object resData = null;
 		try {
 			DataCache dc = dbUtils.findFirst(Selector.from(DataCache.class).where("reqParamMD5Key","=",reqParamMD5Key).and("insertTime",">",valideTimeLong));
-			resData = XcObjectTraskit.trans2Object(dc.getCachedata());
+			resData = ObjectTraskit.trans2Object(dc.getCachedata());
 		} catch (DbException e) {
 			e.printStackTrace();
 		}

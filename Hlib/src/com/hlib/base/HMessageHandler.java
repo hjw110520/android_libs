@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.WeakHashMap;
 
-import com.hlib.base.model.XcMessage;
+import com.hlib.base.model.HMessage;
 
 
-public class XcMessageHandler {
-	private static XcMessageHandler instance;
+public class HMessageHandler {
+	private static HMessageHandler instance;
 	
 	private WeakHashMap<String, ArrayList<WeakReference<OnReceiveMessageListener>>> msgHandlerMap = new WeakHashMap<String, ArrayList<WeakReference<OnReceiveMessageListener>>>();
 	
-	public static XcMessageHandler getInstance(){
+	public static HMessageHandler getInstance(){
 		if(instance == null){
-			instance = new XcMessageHandler();
+			instance = new HMessageHandler();
 		}
 		return instance;
 	}
@@ -53,7 +53,7 @@ public class XcMessageHandler {
 		}
 	}
 	
-	public void pushMsg(String msgKey, XcMessage msg) {
+	public void pushMsg(String msgKey, HMessage msg) {
 		ArrayList<WeakReference<OnReceiveMessageListener>> list = msgHandlerMap.get(msgKey);
 		if (null == list) {
 			return;

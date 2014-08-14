@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import android.widget.Scroller;
 
-import com.hlib.utils.XcToolkit;
+import com.hlib.utils.Toolkit;
 
 public class ScrollLayout extends FrameLayout{
 	private Context context;
@@ -41,7 +41,7 @@ public class ScrollLayout extends FrameLayout{
 
 	
 	private void init(){
-		splitPos = XcToolkit.getScreenHeight(context)/6;
+		splitPos = Toolkit.getScreenHeight(context)/6;
 		mScroller = new Scroller(context);
 	}
 	

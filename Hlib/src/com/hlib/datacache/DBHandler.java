@@ -14,7 +14,7 @@ import com.hlib.R;
 import com.hlib.base.HApplication;
 import com.hlib.datacache.model.DBBaseModel;
 import com.hlib.datacache.model.DBVersion;
-import com.hlib.utils.XCDirUtils;
+import com.hlib.utils.DirUtils;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.DbUtils1;
 import com.lidroid.xutils.DbUtils2;
@@ -213,7 +213,7 @@ public class DBHandler {
                         // 数据库目录
                         //String dbDir = xrp.getAttributeValue(null, "dbDir");
                         //dbBaseModel.setDbDir(dbDir);
-                        dbBaseModel.setDbDir(XCDirUtils.getOrMkDir(context, "datacache").getAbsolutePath()+File.separator);
+                        dbBaseModel.setDbDir(DirUtils.getOrMkDir(context, "datacache").getAbsolutePath()+File.separator);
                         // 是否打印调试语句
                         boolean debugAble = xrp.getAttributeBooleanValue(null, "debugAble", false);
                         dbBaseModel.setDebugAble(debugAble);

@@ -1,6 +1,6 @@
 package com.hlib.base.model;
 
-public class XcMessage {
+public class HMessage {
 	private String msgKey;
 	private Object msg;
 	public String getMsgKey() {
