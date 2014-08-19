@@ -41,7 +41,7 @@ public class ScrollLayout extends FrameLayout{
 
 	
 	private void init(){
-		splitPos = Toolkit.getScreenHeight(context)/6;
+		splitPos = Toolkit.getScreenHeight()/6;
 		mScroller = new Scroller(context);
 	}
 	

@@ -1,22 +1,27 @@
 package com.busunit;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
+import android.support.v4.app.FragmentActivity;
 
-public class MainActivity extends Activity {
+import com.busunit.ui.activities.BaseActivity;
+import com.busunit.widget.SlideMenuLayout;
+import com.hlib.base.model.HMessage;
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
+public class MainActivity extends BaseActivity {
+	
+	@ViewInject(R.id.slide_menu)
+	private SlideMenuLayout mSlideMenuLayout;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.ac_slide_layout);
+		ViewUtils.inject(this);
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	public void onReceiveMessage(HMessage msg) {
 	}
-
 }

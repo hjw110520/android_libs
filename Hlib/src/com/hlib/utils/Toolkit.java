@@ -1,5 +1,7 @@
 package com.hlib.utils;
 
+import com.hlib.base.HApplication;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -12,31 +14,31 @@ import android.view.Display;
 
 public class Toolkit {
 	
-	public static int px2dip(float pxValue,Context context) {
-		final float scale = context.getResources().getDisplayMetrics().density;
+	public static int px2dip(float pxValue) {
+		final float scale = HApplication.getInstance().getResources().getDisplayMetrics().density;
 		return (int) (pxValue / scale + 0.5f);
 	}
 
-	public static int dip2px(float dipValue,Context context) {
-		final float scale = context.getResources().getDisplayMetrics().density;
+	public static int dip2px(float dipValue) {
+		final float scale = HApplication.getInstance().getResources().getDisplayMetrics().density;
 		return (int) (dipValue * scale + 0.5f);
 	}
 
-	public static int px2sp(float pxValue,Context context) {
-		final float scale = context.getResources().getDisplayMetrics().scaledDensity;
+	public static int px2sp(float pxValue) {
+		final float scale = HApplication.getInstance().getResources().getDisplayMetrics().scaledDensity;
 		return (int) (pxValue / scale + 0.5f);
 	}
 	
 
-	public static int sp2px(float spValue,Context context) {
-		final float scale = context.getResources().getDisplayMetrics().scaledDensity;
+	public static int sp2px(float spValue) {
+		final float scale = HApplication.getInstance().getResources().getDisplayMetrics().scaledDensity;
 		return (int) (spValue * scale + 0.5f);
 	}
 	
 	// 获取ip
-	public static String getLocalIpAddress(Context context) {
+	public static String getLocalIpAddress() {
 		// 获取wifi服务
-		WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+		WifiManager wifiManager = (WifiManager) HApplication.getInstance().getSystemService(Context.WIFI_SERVICE);
 		// 判断wifi是否开启
 		if (!wifiManager.isWifiEnabled()) {
 			wifiManager.setWifiEnabled(true);
@@ -49,20 +51,20 @@ public class Toolkit {
 	}
 
 	// 获取到客户ID，即IMSI
-	public static String getIMSI(Context context) {
-		TelephonyManager telephonyManager = (TelephonyManager) context
+	public static String getIMSI() {
+		TelephonyManager telephonyManager = (TelephonyManager) HApplication.getInstance()
 				.getSystemService(Context.TELEPHONY_SERVICE);
 		return telephonyManager.getSubscriberId();
 	}
 
 	// 获取当前应用的版本号：
-	public static String getVersion(Context context) {
+	public static String getVersion() {
 		// 获取packagemanager的实例
-		PackageManager packageManager = context.getPackageManager();
+		PackageManager packageManager = HApplication.getInstance().getPackageManager();
 		// getPackageName()是你当前类的包名，0代表是获取版本信息
 		PackageInfo packInfo = null;
 		try {
-			packInfo = packageManager.getPackageInfo(context.getPackageName(),
+			packInfo = packageManager.getPackageInfo(HApplication.getInstance().getPackageName(),
 					0);
 		} catch (NameNotFoundException e) {
 			e.printStackTrace();
@@ -75,15 +77,15 @@ public class Toolkit {
 	}
 
 	// 获取手机的IMEI号码
-	public static String getIMEI(Context context) {
-		TelephonyManager telephonyManager = (TelephonyManager) context
+	public static String getIMEI() {
+		TelephonyManager telephonyManager = (TelephonyManager) HApplication.getInstance()
 				.getSystemService(Context.TELEPHONY_SERVICE);
 		return telephonyManager.getDeviceId();
 	}
 
 	// 获取手机号码
-	public static String getPhoneNumber(Context context) {
-		TelephonyManager telephonyManager = (TelephonyManager) context
+	public static String getPhoneNumber() {
+		TelephonyManager telephonyManager = (TelephonyManager) HApplication.getInstance()
 				.getSystemService(Context.TELEPHONY_SERVICE);
 		return telephonyManager.getLine1Number();
 	}
@@ -99,8 +101,8 @@ public class Toolkit {
 	}
 
 	// 获取到SIM卡唯一编号ID
-	public static String getSimSerialNumber(Context context) {
-		TelephonyManager telephonyManager = (TelephonyManager) context
+	public static String getSimSerialNumber() {
+		TelephonyManager telephonyManager = (TelephonyManager) HApplication.getInstance()
 				.getSystemService(Context.TELEPHONY_SERVICE);
 		return telephonyManager.getSimSerialNumber();
 	}
@@ -117,16 +119,16 @@ public class Toolkit {
 	}
 
 	// 获得屏幕宽度
-	public static int getScreenWidth(Context context) {
-		return context.getApplicationContext().getResources()
+	public static int getScreenWidth() {
+		return HApplication.getInstance().getResources()
 				.getDisplayMetrics().widthPixels;
 	}
 
 	// 获得屏幕宽度
-	public static int getScreenHeight(Context context) {
-		return context.getApplicationContext().getResources()
+	public static int getScreenHeight() {
+		return HApplication.getInstance().getResources()
 				.getDisplayMetrics().heightPixels
-				- dip2px(20,context);// 天线高度
+				- dip2px(20);// 天线高度
 	}
 	
 	// 获取屏幕分辨率

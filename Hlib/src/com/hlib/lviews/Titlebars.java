@@ -10,17 +10,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.hlib.R;
-import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.view.annotation.ViewInject;
 
 public class Titlebars extends FrameLayout{
 	private Context context;
 	
-	@ViewInject(R.id.titlebar_leftbtn)
 	private ImageButton leftBtn;
-	@ViewInject(R.id.titlebar_rightbtn)
 	private ImageButton rightBtn;
-	@ViewInject(R.id.titlebar_title)
 	private TextView title;
 	
 	public Titlebars(Context context) {
@@ -43,7 +38,9 @@ public class Titlebars extends FrameLayout{
 	
 	private void init(){
 		View view = LayoutInflater.from(context).inflate(R.layout.lviews_titlebars, this);
-		ViewUtils.inject(this,view);
+		leftBtn = (ImageButton) view.findViewById(R.id.titlebar_leftbtn);
+		rightBtn = (ImageButton) view.findViewById(R.id.titlebar_rightbtn);
+		title = (TextView) view.findViewById(R.id.titlebar_title);
 	}
 	
 	/**
