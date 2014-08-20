@@ -1,4 +1,4 @@
-package com.hlib.lviews.slidescrollview;
+package com.busunit.widget.slidescrollview;
 
 import android.content.Context;
 import android.util.AttributeSet;

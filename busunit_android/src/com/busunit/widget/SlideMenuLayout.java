@@ -33,7 +33,7 @@ public class SlideMenuLayout extends ViewGroup {
 	private FrameLayout mCenterMenuContainer;
 	private FragmentManager mFmManager;
 
-	private float mLeftMenuWidth = 0.8F;
+	private float mLeftMenuWidth = 0.5F;
 	private int mLeftMenuWidthPixels = 0;
 
 	private float mDownMotionX;
@@ -79,8 +79,7 @@ public class SlideMenuLayout extends ViewGroup {
 		this.layoutSlideMenu(getScrollX());
 	}
 
-	public void setContainer(int leftContainerId, int centerContainerId,
-			int RightContainerId) {
+	public void setContainer(int leftContainerId, int centerContainerId) {
 		mLeftMenuContainer = (FrameLayout) findViewById(leftContainerId);
 		mCenterMenuContainer = (FrameLayout) findViewById(centerContainerId);
 		centerRootId = mCenterMenuContainer.getId();

@@ -1,4 +1,4 @@
-package com.hlib.lviews;
+package com.busunit.widget;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -9,7 +9,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.hlib.R;
+import com.busunit.R;
+
 
 public class Titlebars extends FrameLayout{
 	private Context context;
@@ -37,7 +38,7 @@ public class Titlebars extends FrameLayout{
 	}
 	
 	private void init(){
-		View view = LayoutInflater.from(context).inflate(R.layout.lviews_titlebars, this);
+		View view = LayoutInflater.from(context).inflate(R.layout.cp_views_titlebars, this);
 		leftBtn = (ImageButton) view.findViewById(R.id.titlebar_leftbtn);
 		rightBtn = (ImageButton) view.findViewById(R.id.titlebar_rightbtn);
 		title = (TextView) view.findViewById(R.id.titlebar_title);
