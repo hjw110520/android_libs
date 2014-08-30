@@ -8,7 +8,11 @@ import com.busunit.widget.SlideMenuLayout;
 import com.hlib.base.HBaseFragment;
 import com.hlib.base.model.HMessage;
 import com.hlib.utils.StringUtils;
-
+/**
+ * 
+ * @author haojinwei
+ *
+ */
 public abstract class BaseFragment extends HBaseFragment{
 	
 	protected SlideMenuLayout mSlideMenuLayout;
@@ -19,11 +23,10 @@ public abstract class BaseFragment extends HBaseFragment{
 		mSlideMenuLayout = ((MainActivity)getActivity()).getSlideMenuLayout();
 	}
 	
-	public void statFragment(String msgKey,Fragment target){
+	public static Fragment initFragmentWithKey(String msgKey,Fragment target){
 		if(null == target){
 			throw new NullPointerException("target fragment is null");
 		}
-		
 		if(StringUtils.isNotBlank(msgKey)){
 			Bundle bundle = target.getArguments();
 			if(null == bundle){
@@ -32,11 +35,30 @@ public abstract class BaseFragment extends HBaseFragment{
 			bundle.putString("msgKey", msgKey);
 			target.setArguments(bundle);
 		}
-		
-		mSlideMenuLayout.pushFragmentController(target);
+		return target;
 	}
 	
-	public void startFragment(Fragment target){
-		statFragment(null, target);
+	
+	/**====================================fragment 处理=====================================*/
+	public void pushFragmentController(Fragment fragment) {
+		mSlideMenuLayout.pushFragmentController(fragment);
 	}
+	
+	public void pushFragmentController(Fragment fragment,
+			int enterAnim,int exitAnim,int popEnterAnim,int popExitAnim) {
+		mSlideMenuLayout.pushFragmentController(fragment, enterAnim, exitAnim, popEnterAnim, popExitAnim);;
+	}
+	
+	public void setLeftSlideFragment(Fragment fragment) {
+		mSlideMenuLayout.setLeftSlideFragment(fragment);
+	}
+	
+	public void setCenterSlideFragment(Fragment fragment) {
+		mSlideMenuLayout.setCenterSlideFragment(fragment);
+	}
+	
+	public void setCenterSlideFragment(Fragment fragment,boolean isRoot,boolean pushStack,boolean useAnim) {
+		mSlideMenuLayout.setCenterSlideFragment(fragment, isRoot, pushStack, useAnim);
+	}
+	
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:localview="http://schemas.android.com/apk/res/com.busunit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <com.busunit.widget.Titlebars 
+        android:id="@id/titlebars"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        localview:titleText = "@string/title_registe"
+        />
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/simple_shape"
+        android:layout_margin="@dimen/simple_margin"
+        >
+        <com.busunit.widget.commonview.CommonViewTextNomal
+           	android:id="@id/commonview1"
+	        android:layout_width="match_parent"
+	        android:layout_height="@dimen/title_bar_height"
+	        localview:commonText_title = "@string/registe_type_drivers"
+	        />
+        <com.busunit.widget.commonview.CommonViewTextNomal
+           	android:id="@id/commonview2"
+	        android:layout_width="match_parent"
+	        android:layout_height="@dimen/title_bar_height"
+	        localview:commonText_title = "@string/registe_type_users"
+	        localview:commonText_bootomSplit="false"
+	        />
+    </LinearLayout>
+
+</LinearLayout>

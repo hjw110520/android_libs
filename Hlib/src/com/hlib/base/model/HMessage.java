@@ -16,4 +16,9 @@ public class HMessage {
 		this.msg = msg;
 	}
 	
+	public void put(String msgKey,Object msg){
+		this.msgKey = msgKey;
+		this.msg = msg;
+	}
+	
 }

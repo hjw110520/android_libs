@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="titlebarsStyle">
+       <attr name="leftBtnRes" format="reference" /> 
+       <attr name="rightBtnRes" format="reference" /> 
+	   <attr name="titleText" format="string"/> 
+	   <attr name="rightText" format="string"/> 
+    </declare-styleable>
+    
+    <declare-styleable name="uiCommonTextStyle">
+       <attr name="commonText_title" format="string" /> 
+       <attr name="commonText_context" format="string" /> 
+       <attr name="commonText_context_hint" format="string" /> 
+       <attr name="commonText_lefticonRes" format="reference" /> 
+       <attr name="commonText_righticonRes" format="reference" /> 
+       <attr name="commonText_bootomSplit" format="boolean" /> 
+    </declare-styleable>
+</resources>

@@ -5,7 +5,5 @@
     
     <dimen name="text_size_small">18sp</dimen><!-- 24 -->
     <dimen name="text_size_normal">20.7sp</dimen><!--28  -->
-    <dimen name="text_size_xnormal">22sp</dimen><!--30  -->
     <dimen name="text_size_big">27.3sp</dimen><!-- 38 -->
-    <dimen name="text_size_xbig">34sp</dimen><!--48  -->
 </resources>

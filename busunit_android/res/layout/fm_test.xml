@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:uicommontext="http://schemas.android.com/apk/res/com.busunit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <com.busunit.widget.commonview.UICommonTextIcon
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        uicommontext:commonText_context_hint = "请输入手机号"
+        uicommontext:commonText_lefticonRes = "@drawable/ic_launcher"
+        />
+</LinearLayout>

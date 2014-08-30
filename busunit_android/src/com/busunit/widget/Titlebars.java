@@ -1,6 +1,7 @@
 package com.busunit.widget;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ public class Titlebars extends FrameLayout{
 	private ImageButton leftBtn;
 	private ImageButton rightBtn;
 	private TextView title;
+	private TextView rightText;
 	
 	public Titlebars(Context context) {
 		super(context);
@@ -29,12 +31,43 @@ public class Titlebars extends FrameLayout{
 		super(context, attrs, defStyle);
 		this.context = context;
 		init();
+		initDefStyle(attrs);
 	}
 
 	public Titlebars(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.context = context;
 		init();
+		initDefStyle(attrs);
+	}
+	
+	private void initDefStyle(AttributeSet attrs){
+		TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.titlebarsStyle);
+		if(null != typedArray){
+			int count = typedArray.getIndexCount();
+			for(int i=0;i<count;i++){
+				int index = typedArray.getIndex(i);
+				switch (index) {
+				case R.styleable.titlebarsStyle_leftBtnRes:
+					
+					break;
+				case R.styleable.titlebarsStyle_rightBtnRes:
+					
+					break;
+				case R.styleable.titlebarsStyle_titleText:
+					String titleText = typedArray.getString(index);
+					setTitleText(titleText);
+					break;
+				case R.styleable.titlebarsStyle_rightText:
+					String rightText = typedArray.getString(index);
+					setRightText(rightText);
+					break;
+				default:
+					break;
+				}
+			}
+		}
+		typedArray.recycle();
 	}
 	
 	private void init(){
@@ -42,6 +75,7 @@ public class Titlebars extends FrameLayout{
 		leftBtn = (ImageButton) view.findViewById(R.id.titlebar_leftbtn);
 		rightBtn = (ImageButton) view.findViewById(R.id.titlebar_rightbtn);
 		title = (TextView) view.findViewById(R.id.titlebar_title);
+		rightText = (TextView) view.findViewById(R.id.titlebar_rightText);
 	}
 	
 	/**
@@ -50,6 +84,10 @@ public class Titlebars extends FrameLayout{
 	 */
 	public void setLDrawable(Drawable drawable) {
 		leftBtn.setImageDrawable(drawable);
+	}
+	
+	public void setLOnClickListener(View.OnClickListener l) {
+		leftBtn.setOnClickListener(l);
 	}
 	
 	/**
@@ -66,6 +104,14 @@ public class Titlebars extends FrameLayout{
 	 */
 	public void setTitleText(CharSequence c){
 		title.setText(c);
+	}
+	
+	/**
+	 * 设置右侧文字
+	 * @param c
+	 */
+	public void setRightText(CharSequence c){
+		rightText.setText(c);
 	}
 
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:focusable="true"
+   	android:focusableInTouchMode="true">
+   	
+   	<ImageView 
+     	android:id="@id/commonview_leftview"
+	    android:layout_width="@dimen/simple_margin30"
+	    android:layout_height="match_parent"
+     	android:layout_centerVertical="true"
+     	android:scaleType="centerInside"
+     	android:layout_marginLeft="@dimen/simple_margin"
+     	android:contentDescription="@string/no_pic"
+     	android:visibility="gone"
+	    />
+   	
+   <TextView 
+     	android:id="@id/commonview_titleview"
+     	android:layout_toRightOf="@id/commonview_leftview"
+	    android:layout_width="wrap_content"
+	    android:layout_height="match_parent"
+     	android:layout_centerVertical="true"
+     	android:gravity="center_vertical"
+     	android:textSize="@dimen/text_size_normal"
+     	android:layout_marginLeft="@dimen/simple_margin"
+     	android:text=""
+	    />
+	<EditText 
+	    android:id="@id/commonview_contextview"
+	    android:inputType="text"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+     	android:layout_centerVertical="true"
+     	android:gravity="center_vertical"
+     	android:layout_toRightOf="@id/commonview_titleview"
+     	android:layout_marginLeft="@dimen/simple_margin"
+     	android:layout_marginRight="@dimen/simple_margin"
+     	android:background="@null"
+     	android:textSize="@dimen/text_size_normal"
+     	android:text=""
+     	android:layout_toLeftOf="@id/commonview_rightview"
+	    />
+	
+	<ImageView 
+     	android:id="@id/commonview_rightview"
+	    android:layout_width="@dimen/simple_margin30"
+	    android:layout_height="match_parent"
+     	android:layout_centerVertical="true"
+     	android:scaleType="centerInside"
+     	android:layout_marginRight="@dimen/simple_margin"
+     	android:contentDescription="@string/no_pic"
+     	android:layout_alignParentRight="true"
+     	android:visibility="gone"
+	    />
+	
+	<View 
+	    android:id="@id/commonview_bootomsplitview"
+	    android:layout_width="match_parent"
+	    android:layout_height="@dimen/divider_height"
+	    android:background="@color/divider"
+	    android:layout_alignParentBottom="true"
+	    />
+</RelativeLayout>
